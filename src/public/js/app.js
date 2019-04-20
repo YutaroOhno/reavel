@@ -61780,7 +61780,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios.get('/api/get').then(function (res) {
+      axios.get('/api/todos').then(function (res) {
         //todosを更新（描画がかかる）
         _this2.setState({
           todos: res.data

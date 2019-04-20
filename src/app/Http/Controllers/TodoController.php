@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Todo;
+use App\Services\TodoService;
 
 class TodoController extends Controller
 {
-    //getTodos
-    public function getTodos()
+
+    private $todoService;
+
+    public function __construct(TodoService $todoService)
     {
-        $todos = Todo::all();
-        return $todos;
+        $this->todoService = $todoService;
+    }
+
+    //getTodos
+    public function getAllTodo()
+    {
+        return $this->todoService->getAllTodo();
     }
 }

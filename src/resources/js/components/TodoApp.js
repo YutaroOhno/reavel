@@ -13,7 +13,7 @@ export default class TodoApp extends Component {
 
     componentDidMount(){
         axios
-            .get('/api/get')
+            .get('/api/todos')
             .then((res) => {
                 //todosを更新（描画がかかる）
                 this.setState({

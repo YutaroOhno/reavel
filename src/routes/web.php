@@ -16,6 +16,6 @@ Route::get('/welcome', function(){
 });
 
 Route::group(['prefix' => 'api'], function () {
-    Route::get('get', 'TodoController@getTodos');
+    Route::get('todos', 'TodoController@getAllTodo');
 });
  
