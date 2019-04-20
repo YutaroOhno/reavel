@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/{any}', function(){
+Route::get('/welcome', function(){
     return view('welcome');
-})->where('any','.*');
+});
+
+Route::group(['prefix' => 'api'], function () {
+    Route::get('get', 'TodoController@getTodos');
+});
+ 
